@@ -6,7 +6,7 @@
 
 Em CONTAINMENT, você assume o papel de Alex, operador de apoio na fictícia Usina Aurora. Depois de um acidente industrial, você precisa localizar uma colega, investigar o que aconteceu no turno anterior e explicar por que sua assinatura aparece em um checklist incompleto.
 
-🎮 **[Jogar CONTAINMENT no navegador](https://thamirixs.github.io/containment/)**
+🎮 **[Jogar CONTAINMENT no navegador](https://thamirixs.github.io/CONTAINMENT/)**
 
 ## Como jogar
 
