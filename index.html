@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b0e">
+  <title>CONTAINMENT | Turno N-07</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <main id="app">
+    <section id="menu" class="screen">
+      <p class="eyebrow alarm">● SISTEMA DE EMERGÊNCIA / N-07</p>
+
+      <div class="reactor" aria-hidden="true">☢</div>
+
+      <h1>CONTAINMENT</h1>
+
+      <p class="subtitle">
+        O turno termina. As consequências permanecem.
+      </p>
+
+      <p class="intro">
+        03:42. Um estrondo. O reator foi desligado, mas o calor
+        permanece. Dentro da usina Aurora, sua assinatura está
+        no último checklist.
+      </p>
+
+      <div class="menu-actions">
+        <button id="start-btn">INICIAR TURNO →</button>
+        <button id="load-menu" class="secondary">
+          CARREGAR PARTIDA
+        </button>
+      </div>
+
+      <p class="muted">
+        Ficção interativa • 20–35 minutos • sem limite de tempo real
+      </p>
+    </section>
+
+    <section id="game" class="hidden" aria-label="Partida">
+      <header class="topbar">
+        <strong>
+          CONTAINMENT <small>/ AURORA N-07</small>
+        </strong>
+
+        <div class="toolbar">
+          <button id="save-btn" class="secondary">Salvar</button>
+          <button id="load-btn" class="secondary">Carregar</button>
+          <button id="restart-btn" class="secondary">Reiniciar</button>
+        </div>
+      </header>
+
+      <div class="layout">
+        <aside class="panel">
+          <p class="eyebrow">TELEMETRIA DO OPERADOR</p>
+
+          <h2 id="clock">03:42</h2>
+          <p id="elapsed" class="muted"></p>
+
+          <label for="health-bar">
+            Integridade
+            <strong id="health-value"></strong>
+          </label>
+          <progress id="health-bar" max="100" value="100"></progress>
+
+          <label for="radiation-bar">
+            Dose fictícia acumulada
+            <strong id="radiation-value"></strong>
+          </label>
+          <progress id="radiation-bar" max="100" value="0"></progress>
+
+          <label for="contamination-bar">
+            Contaminação externa
+            <strong id="contamination-value"></strong>
+          </label>
+          <progress id="contamination-bar" max="100" value="0"></progress>
+
+          <p class="fine">
+            Índices de jogo, sem equivalência em Gy ou Sv.
+            Dose pode ultrapassar 100; a barra é apenas visual.
+            Integridade representa ferimentos industriais.
+          </p>
+
+          <h3>Inventário</h3>
+          <ul id="inventory" class="inventory"></ul>
+
+          <h3>Setores</h3>
+          <ul id="map" class="map"></ul>
+        </aside>
+
+        <article class="panel story-panel">
+          <p id="chapter" class="eyebrow"></p>
+          <p id="location" class="location"></p>
+
+          <h2 id="scene-title" tabindex="-1"></h2>
+
+          <div id="story-text"></div>
+
+          <p
+            id="consequence"
+            class="consequence"
+            role="status"
+          ></p>
+
+          <div id="choices" class="choices"></div>
+
+          <section id="ending" class="hidden">
+            <h3>Relatório do incidente</h3>
+
+            <div id="report"></div>
+
+            <button id="download-btn" class="secondary">
+              BAIXAR RELATÓRIO .TXT
+            </button>
+
+            <button id="again-btn">NOVO TURNO</button>
+          </section>
+        </article>
+
+        <aside class="panel journal">
+          <p class="eyebrow alarm">● CANAL DE EMERGÊNCIA</p>
+
+          <ol id="alerts" class="alerts"></ol>
+
+          <h3>Investigação</h3>
+          <ul id="evidence"></ul>
+
+          <details>
+            <summary>Registro de decisões</summary>
+            <ol id="history"></ol>
+          </details>
+        </aside>
+      </div>
+    </section>
+
+    <details class="science">
+      <summary>Como funciona o modelo educativo</summary>
+
+      <p>
+        Este jogo não é treinamento operacional. O acidente fictício
+        envolve incêndio elétrico, perda de alimentação, falhas de
+        refrigeração e possível liberação radioativa. Não há detonação
+        nuclear. Mesmo após o desligamento, o combustível produz
+        calor de decaimento.
+      </p>
+
+      <p>
+        Exposição é receber radiação; dose é a quantidade acumulada
+        no modelo. Contaminação é a presença de material radioativo.
+        Roupa de proteção reduz contato com contaminantes, mas não
+        blinda radiação penetrante. Limpeza não desfaz a dose recebida.
+        O jogo não estima contaminação interna nem diagnostica efeitos
+        biológicos. Ausência de sintomas não comprova segurança.
+      </p>
+
+      <p>
+        O relógio avança apenas com ações. Aos 35 minutos, danos no
+        setor técnico agravam o ambiente; aos 70, encerra-se a janela
+        de deslocamento. Esses prazos são escolhas narrativas, não
+        parâmetros de usinas reais. As equipes especializadas executam
+        as intervenções técnicas.
+      </p>
+
+      <p>
+        Referências:
+        <a
+          href="https://www.cdc.gov/radiation-emergencies/causes/index.html"
+          target="_blank"
+          rel="noopener"
+        >CDC: exposição e contaminação</a>
+        ·
+        <a
+          href="https://www.nrc.gov/regulations-legislation/fact-sheets-brochures/backgrounder-on-the-three-mile-island-accident"
+          target="_blank"
+          rel="noopener"
+        >NRC: acidente e calor residual</a>.
+      </p>
+    </details>
+
+    <p
+      id="notice"
+      class="notice"
+      role="status"
+      aria-live="polite"
+    ></p>
+
+    <noscript>
+      Ative o JavaScript para jogar CONTAINMENT.
+    </noscript>
+  </main>
+</body>
+</html>
